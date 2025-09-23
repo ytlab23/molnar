@@ -1,0 +1,243 @@
+/* Navigation */
+.navigation {
+    background: rgba(118, 79, 43, 0.95);
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.navigation .container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-link {
+    color: #fffacd;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 250, 205, 0.2);
+    transform: translateY(-2px);
+}
+
+.nav-link.active {
+    background-color: rgba(255, 250, 205, 0.3);
+}
+
+/* Adjust hero section for navigation */
+.hero {
+    margin-top: 60px;
+}
+
+/* Violin Gallery */
+.violin-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.violin-item {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(118, 79, 43, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    background: white;
+}
+
+.violin-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(118, 79, 43, 0.3);
+}
+
+.violin-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.violin-item:hover .violin-image {
+    transform: scale(1.05);
+}
+
+.violin-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(118, 79, 43, 0.9));
+    color: #fffacd;
+    padding: 30px 20px 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.violin-item:hover .violin-overlay {
+    transform: translateY(0);
+}
+
+.violin-overlay h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+    animation: zoomIn 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes zoomIn {
+    from { transform: translate(-50%, -50%) scale(0.3); }
+    to { transform: translate(-50%, -50%) scale(1); }
+}
+
+.close {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 10000;
+}
+
+.close:hover,
+.close:focus {
+    color: #fffacd;
+    text-decoration: none;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #fffacd;
+    padding: 20px 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 5px;
+    padding: 15px 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navigation .container {
+        gap: 15px;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        padding: 8px 15px;
+    }
+
+    .violin-gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .violin-item {
+        border-radius: 10px;
+    }
+
+    .violin-image {
+        height: 300px;
+    }
+
+    .violin-overlay {
+        padding: 20px 15px 15px;
+    }
+
+    .violin-overlay h3 {
+        font-size: 1.1rem;
+    }
+
+    .close {
+        top: 20px;
+        right: 30px;
+        font-size: 30px;
+    }
+
+    .modal-content {
+        max-width: 95%;
+        max-height: 85%;
+    }
+
+    #caption {
+        width: 90%;
+        font-size: 1rem;
+        bottom: 30px;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .violin-gallery {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .violin-image {
+        height: 250px;
+    }
+
+    .close {
+        top: 15px;
+        right: 20px;
+        font-size: 25px;
+    }
+}
