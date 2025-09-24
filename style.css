@@ -55,7 +55,10 @@ body {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, #764f2b, #8b5a3c);
+    background:  url('hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: #fffacd;
     min-height: 100vh;
     display: flex;
@@ -302,6 +305,17 @@ body {
     opacity: 0.8;
 }
 
+.footer-bottom a {
+    color: #fffacd;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: #fff;
+}
+
 /* Contact Section */
 .contact {
     background-color: #764f2b;
@@ -341,6 +355,48 @@ body {
 
 .contact-info p:last-child {
     margin-bottom: 0;
+}
+
+/* Clients Section */
+.clients-section {
+    background: rgba(255, 250, 205, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 250, 205, 0.2);
+    margin-top: 30px;
+    text-align: center;
+}
+
+.clients-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    color: #fffacd;
+}
+
+.clients-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.client-link {
+    color: #fffacd;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid rgba(255, 250, 205, 0.3);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    min-width: 200px;
+}
+
+.client-link:hover {
+    background-color: rgba(255, 250, 205, 0.2);
+    border-color: #fffacd;
+    transform: translateY(-2px);
 }
 
 /* Responsive Design */
